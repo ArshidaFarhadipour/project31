@@ -1,0 +1,1729 @@
+@font-face {
+    font-family: "Yekan";
+    src: url("YekanBakh-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "YekanBold";
+    src: url("YekanBakh-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "YekanExtra";
+    src: url("YekanBakh-ExtraBlack.ttf") format("truetype");
+}
+
+/*button=======================*/
+:root{
+    --background-color-button: #ffff;
+    --font-family-button: YekanBold;
+    --color-button:#ec5504;
+    --font-size-button: 18px;
+    --border-button: 1px solid #ec5504;
+    --radius:100px;
+    --height:36px;
+    --width:120px;
+}
+
+.button{
+    background-color: var(--background-color-button);
+    font-family:var(--font-family-button);
+    color:var(--color-button);
+    font-size:var(--font-size-button);
+    text-decoration: none;
+    border:var(--border-button);
+    border-radius: var(--radius);
+    height:var(--height);
+    width:var(--width);
+    cursor: pointer;
+}
+
+.button:hover{
+        transform:translateY(-2px) scale(1.03);
+}
+
+.title {
+    color: var(--clr-title);
+    font-size: var(--fs-title);
+    font-family: var(--ff-title);
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top:25px;
+    font-size: 28px;
+    
+
+}
+
+
+
+
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Yekan;
+    min-width:0;
+    scroll-behavior: smooth;
+
+}
+.section{
+
+    padding-left:7%;
+    padding-right:7%;
+    min-height: 40vh;
+}
+
+.title{
+    text-align: center;
+    font-family: YekanBold;
+    font-size: 30px;
+    color:white;
+}
+#home{
+    min-height: 100vh;
+    background-image: url("Hero\ Image.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+}
+
+/* ================= before section home========*/
+
+.header{
+    position:fixed;
+    top:24px;
+    left:50%;
+    padding:5px 24px;
+    transform:translateX(-50%);
+    width:99%;
+    max-width:1424px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(4,25,44,.8);
+    backdrop-filter:blur(18px);
+    border:1px solid #1E2F3F;
+    border-radius:100px;
+    z-index:10000;
+    flex-wrap:nowrap; /* فقط برای جلوگیری از بهم ریختگی */
+}
+
+.header-right{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:14px;
+    position: relative;
+}
+.header-left{
+    direction:ltr;
+    display:flex;
+    flex-direction:row;
+    gap:16px;
+    height:36px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.logo img{
+    width:80px;
+    height:auto;
+    display:block;
+    height:30px;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:2px;
+    z-index:9999;
+ 
+
+}
+
+.menu a{
+    text-decoration:none;
+    color:#ffff;
+    padding:11px 16px;
+    border-radius:14px;
+    font-size:18px;
+    transition:.3s;
+    position:relative;
+}
+
+.menu a:hover{
+    color:#EC5504;
+}
+
+.menu a.active{
+    color:#EC5504;
+}
+
+.menu a.active::before{
+    content:"";
+    position:absolute;
+    top:-7px;
+    left:50%;
+    transform:translateX(-50%);
+    width:80%;
+    height:5px;
+    background:#EC5504;
+    border-radius:100px;
+}
+
+.line-menu{
+    display: none;
+
+}
+.login-button{
+    width:36px;
+    height:36px;
+    border-radius:100px;
+    display:block;
+}
+.login-button:hover{
+        transform:translateY(2px) scale(1.05);
+}
+
+.login-button img{
+    width:36px;
+    height:36px;
+    top:3px;
+    left:3px;
+
+}
+
+.charge{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+.charge:hover{
+    transform:translateY(-2px) scale(1.03);
+
+}
+.phoneitems1{
+    display: none;
+}
+.phoneitems2 img{
+    width:24px;
+    height:24px;
+    position: relative;
+    top:7px;
+}
+
+.phonenumber2{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    padding-bottom:7px;
+    left:2px;
+
+}
+.image-content{
+    
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: min(90%, 800px);          /* قبلاً 70% و 80% بود */
+    max-width: 933px;
+    margin: 0 auto;
+    padding: clamp(20px, 3.5vw, 32px) clamp(18px, 3vw, 28px);
+    gap: clamp(10px, 1.5vw, 16px);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 12px;
+    position: relative;
+    top: -40px;                      /* یک مقدار ثابت برای همه */
+    animation: fadeUp 0.8s ease-out;
+}
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+h1{
+    font-weight: 950;
+    font-family:YekanExtra;
+    width:100%;
+    max-width:933px;
+    font-size: clamp(26px, 5vw, 60px);
+    color:#EC5504;
+    line-height: 1.2;
+    margin-bottom: 6px;
+
+    text-align:center;
+    justify-content: center;
+   
+
+}
+
+p{
+    width:100%;
+    max-width:750px;
+    font-weight: 700;
+    font-size:35px;
+    line-height: 1.3;
+    font-size: clamp(15px, 3vw, 35px);
+    font-family: YekanBold;
+    font-weight: 700;
+    color:white;
+   text-align: center;
+    margin-top: 5px;
+}
+
+.image-content p span{
+    display: inline;
+
+}
+
+.information{
+    text-decoration:none;
+    display:flex;
+    width:150px;
+    height:36px;
+    border-radius:100px;
+    padding:10px;
+
+    font-weight:bold;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+.hamburger{
+    display:none  ;
+    font-size:26px;
+    background:none;
+    border:none;
+    color:white;
+    cursor:pointer;
+    z-index:10001;
+  
+}
+
+@media (max-width:1123px){
+
+#home {
+        display: flex;
+        justify-content: center;
+        align-items: center;        /* مثل دسکتاپ */
+        padding-top: 90px;          /* مثل دسکتاپ */
+        min-height: 100vh;
+
+        background-size: cover;
+
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .image-content {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 13px;
+        padding: 24px 20px 32px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        border-radius: 12px;
+        text-align: center;
+        position: relative;
+        top:-140px;
+        width: 93%;
+        max-width: 93%;
+        margin: 0 auto;
+        animation: fadeUp 0.8s ease-out;
+}
+
+    
+
+    h1 {
+        font-size: 29px;            /* مثل دسکتاپ */
+        font-weight: bold;
+        line-height: 1.2;
+        white-space: normal;
+        text-align: center;
+    }
+
+    p {
+        font-size: 24px;            /* مثل دسکتاپ */
+        font-weight: 700;
+        line-height: 1.3;
+        text-align: center;
+        margin-top: 5px;
+    } 
+
+ .header{ 
+          height:60px;
+          top:0px; 
+          left:0px; 
+          right:0px;
+          width:100%; 
+          max-width:none;
+          transform:none; 
+          border-radius:0; 
+          padding:12px 8px;
+         position:fixed;
+         color:#0f2704;
+
+         
+ }
+        
+
+
+.menu.open{ display:flex; } 
+
+    .hamburger{ 
+        display:block;
+        position:absolute;
+        right:16px; 
+        top:50%;
+        transform:translateY(-50%); 
+        font-size:26px;
+        background:none;
+        border:none; 
+        color:white;
+        cursor:pointer; 
+        z-index:10003;
+
+}
+.menu a{
+    width:100%;
+    text-align: center;
+}
+.menu a.active::before{
+    display:  none;
+
+}
+
+.line-menu {
+    display: block !important;
+    width: 100% !important;
+    margin: 2px auto  8px auto !important;
+    height: 1.5px !important;
+    background: #176676 1px!important;
+    border: none !important;
+}
+
+         .hamburger{ 
+            display:block; 
+            position:absolute;
+            right:16px;
+            top:50%; 
+            transform:translateY(-50%);
+            font-size:26px; 
+            background:none;
+            border:none;
+            color:white; 
+            cursor:pointer;
+            z-index:10003; 
+            transition: 0.3s;
+            } 
+
+            .header-left{ 
+            position:absolute; 
+            left:16px;
+             top:50%; 
+             transform:translateY(-50%); } 
+
+            
+             .header-right{ 
+                position: relative;
+                width:100% } 
+
+            .logo{
+                position: absolute;
+                left:50%;
+                transform: translateX(-50%);
+                opacity: 1;               /* در این بازه لوگو دیده شود */
+                visibility: visible;
+                
+            }
+
+        .phoneitems2{
+            display: none;
+        }
+
+    .charge {
+        display:flex;
+        position: absolute;
+        left:45px;
+        top: 0px;
+
+        width: 110px;
+        height: 34px;
+        z-index: 20;
+  
+    }
+
+.phoneitems1 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;    
+    margin-right:-10px;       /* تقریبا چسبیده */
+    margin-top: -20px !important;
+    justify-content: center !important;
+    direction: ltr;
+    width:auto;
+    white-space: nowrap;
+}
+
+.phoneitems1 img {
+    width: 19px !important;
+    height: 19px !important;
+    margin-right: 0px !important;   /* این رو دستی تنظیم می‌کنیم */
+}
+
+.phonenumber1 {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+    .logo img {
+        height: 32px;
+        width: auto;
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            opacity 0.35s ease,
+            visibility 0s linear 0.35s;
+        z-index: 999;
+    }
+
+    body:has(.menu.open)::before {
+        opacity: 1;
+        visibility: visible;
+        transition:
+            opacity 0.35s ease,
+            visibility 0s linear 0s;
+    }
+
+ 
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 60px;
+        z-index: 1200;
+        overflow: visible;
+    }
+
+ .menu {
+    position: absolute;
+    top: 27px;
+    left: -8px;
+    right: -8px;
+    width: calc(100% + 16px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 25px 20px 30px;
+    background: #04192C;
+    border: 1px solid #1E2F3F;
+    border-top: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-180vh);
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.25s ease,
+        visibility 0s linear 0.65s;
+    z-index: 1100;
+    
+}
+
+.menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.25s ease,
+        visibility 0s linear 0s;
+}
+
+    .menu a {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .menu.open a {
+        opacity: 1;
+        transform: none;
+    }
+
+    .header.menu-is-open .charge {
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+        opacity 0.15s ease;
+    }
+
+    .hamburger {
+        z-index: 1201;
+    }
+
+    .phoneitems1 {
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin: 0 !important;
+        direction: ltr;
+    }
+
+    .phoneitems1 img {
+
+        width: 19px !important;
+        height: 19px !important;
+
+        margin: 0 !important;
+    }
+
+    .phonenumber1 {
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .header.menu-is-open .charge {
+        display: none !important;
+    }
+
+    .header.menu-is-open {
+        z-index: 1100;
+    }
+}
+
+@media(max-width:460px){
+/* لوگو مخفی */
+
+.logo {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    
+
+    .login-button {
+        display: block;
+    }
+    
+    .hamburger {
+        display: block !important;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10003;
+    }
+
+    .phoneitems2 {
+        display: none !important;
+    }
+
+.logo {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.header.menu-is-open .logo {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.2s ease 0.15s;
+}
+}
+
+/* ================= aboutus ================= */
+#aboutus{
+    background:#0F263A;
+    color:white;
+    padding-top:80px;
+
+}
+
+/* تیتر */
+
+/* کادر */
+.about-box{
+
+    max-width:838px;
+    min-height:216px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+}
+
+/* ستون لوگو (25 درصد) */
+
+.about-logo{
+
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top: 15px;
+}
+
+.about-logo img{
+
+    width:140px;
+    height:97px;
+
+}
+
+/* ستون متن (75 درصد) */
+
+.about-text{
+
+    flex:3;
+    font-size:18px;
+    line-height:2;
+    text-align:justify;
+    padding:10px 30px;
+}
+
+/* جایگزین کردن این بخش */
+.truck-wrapper {
+    width: 100%;
+    max-width: 2000px;
+    width: calc(100% + 16%);
+    margin-right: -8%;
+    margin-left: -8%;
+    position: relative;
+    margin-top: -25px;
+    margin-bottom: 0;
+    overflow: visible;
+          /* مهم: اجازه بده عکس بیرون بزند */
+}
+
+
+.truck1{display: none;}
+.truck2 {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: translateY(0);   
+    position: relative;
+    bottom: 0;                 
+}
+
+
+@media(max-width:1105px){
+#aboutus{
+    min-height: 40vh;
+}
+
+.about-box{
+    flex-direction:column;
+    align-items:center;
+}
+
+.about-logo{
+    margin-bottom:20px;
+}
+
+.about-text{
+    flex:none;
+    width:100%;
+    padding:0;
+    text-align:justify;
+}
+
+    .truck-wrapper {
+        margin: 0 -8%;           /* کمی بیرون‌زدگی برای حس طراحی قبلی */
+        padding-top: 10px;
+
+    }
+    
+    .truck1 {
+     width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;    
+    height:auto;     
+    overflow: visible;
+
+    }
+    .truck2{display:none}
+}
+@media (max-width: 960px){
+
+    .truck2{
+        display: none;
+    }
+    .truck1{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;    
+    height:auto;     
+    overflow: visible;
+
+    }}
+
+/*==============products=======*/
+#products{
+    background:#EC5504;
+    color:white;
+    padding-top:45px;
+    min-height: 90vh;
+    padding-right:-20px;
+    padding-left:-20px;
+    width:calc(100%+40px);
+
+}
+
+.colorblack{
+    background:#0F263A;
+    width:100%;
+    max-width:1490px;
+    display:flex;
+    direction:ltr;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:40px;
+    border-radius: 16px;
+
+}
+
+.leftwrite{
+    direction:rtl;
+    text-align:right;
+}
+
+.slider-dots {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+    direction: rtl;
+}
+
+.dot{
+    width:24px;
+    height:12px;
+    border:1px solid white;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.dot.active{
+    background:#EC5504;
+    border:white 1px solid;
+
+}
+
+ /* فقط عکس‌ها – موقعیت دقیقاً مثل طراحی */
+
+.pictureright {
+    position: relative;
+    margin-left:auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    align-items: flex-start;
+}
+
+
+
+
+.picture-frame {
+    margin-top:140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+
+.picture-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+    max-width:300px;
+    max-height:200px;
+
+
+    
+}
+
+/* موقعیت و اندازه هر عکس مثل فیگما */
+
+
+
+
+.check{
+display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 16px;
+    margin-bottom:-3px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    direction:rtl;
+
+}
+
+.leftwrite{
+    width:65%;
+    color:white;
+
+}
+
+h4{
+    line-height:45px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0%;
+    margin-bottom: 50px;
+    margin-top: 19px;
+
+}
+.paragraph1{
+    margin-bottom: 60px;
+    padding-left: 50px;
+    font-size: 18px;
+
+}
+
+.paragraph2{
+    color:#F8B29D;
+    margin-bottom: 18px;
+    font-size: 18px;
+}
+.items{
+    font-size: 18px;
+    direction: ltr;
+    line-height: 2;
+}
+
+#product-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-slide {
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
+.product-slide.active {
+    display: flex;
+}
+
+.mis-features {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.mis-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 200px;
+}
+
+.mis-col div {
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+@media(max-width:1105px){
+    #products {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.colorblack {
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 20px;
+    border-radius: 16px;
+    gap: 0;
+    
+
+}
+
+/* این خط چیزیه که کم بود و باگ اصلی رو حل می‌کنه */
+.product-slide.active {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+
+}
+
+.leftwrite {
+    order: 2;
+    width: 100%;
+    text-align: center;
+}
+
+.pictureright {
+    order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: none;
+}
+
+.slider-dots {
+    justify-content: center;
+    margin-bottom: 16px;
+    padding-right:20px;
+    display:flex;
+    justify-content:flex-start;
+
+}
+.picture-frame{
+    margin-top:50px;
+}
+h4 {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.paragraph1 {
+    padding-left: 0;
+    text-align: justify;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.paragraph2 {
+    text-align: right;
+    margin: 10px 0 15px;
+}
+
+.items {
+    text-align: right;
+}
+.check {
+    width: 18px !important;
+    height: 14px !important;
+    margin-bottom: 0 !important;
+    margin-top: 3px;          /* کمی پایین‌تر تا با متن هم‌تراز شود */
+    flex-shrink: 0;
+}
+.mis-features {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 22px;
+
+}
+
+.mis-col {
+    display: flex;
+    flex-direction: column;
+    gap:14px;
+    min-width: 0;
+    min-width: 200px;
+}
+
+.mis-col div {
+    font-size: 15px;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: right;
+    white-space: normal;
+}
+}
+
+
+/*agency=================*/
+/* سرچ‌باکس */
+
+#agency{
+    background-color: rgba(4, 25, 44, 1);
+    min-height:100vh;
+}
+
+.agency-title{
+    color:white;
+    text-align: center;
+    font-size: 30px;
+    font-family: YekanBold;
+    padding-top:45px;
+}
+.searchbox {
+    width: 100%;
+    max-width: 364px;
+    margin: 20px auto 30px;   /* فاصله از بالا و پایین */
+    display: flex;
+    justify-content: center;
+}
+
+.search-input-wrapper {
+    position: relative;
+    width: 100%;
+    direction: ltr;
+}
+
+.searchbox input {
+    width: 100%;
+    height: 48px;
+    padding: 12px 48px 12px 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: #1E2F3F;
+    color: #BEBEBE;
+    font-size: 14px;
+    direction: rtl;
+    outline: none;
+}
+
+.searchbox input::placeholder {
+    color: #8A9BA8;
+    font-size: 14px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+.searchbox input:focus {
+    border: 1px solid #67D8EE;
+}
+
+/* کارت‌های نمایندگی */
+/* ========== AGENCY ========== */
+#agency {
+    background-color: rgba(4, 25, 44, 1);
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+.agency-title {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: YekanBold;
+    padding-top: 45px;
+}
+
+/* سرچ‌باکس */
+.searchbox {
+    width: 100%;
+    max-width: 364px;
+    margin: 20px auto 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input-wrapper {
+    position: relative;
+    width: 100%;
+    direction: ltr;
+}
+
+.searchbox input {
+    width: 100%;
+    height: 48px;
+    padding: 12px 48px 12px 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: #1E2F3F;
+    color: #BEBEBE;
+    font-size: 14px;
+    direction: rtl;
+    outline: none;
+}
+
+.searchbox input::placeholder {
+    color: #8A9BA8;
+    font-size: 14px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+.searchbox input:focus {
+    border: 1px solid #67D8EE;
+}
+
+/* ظرف کارت‌ها — دو ستون */
+.cards-agency {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 7%;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.agency-no-results {
+    width: 100%;
+    padding: 24px;
+    color: #BEBEBE;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* خود کارت */
+.card-agency {
+    width: calc(50% - 10px);
+    max-width: 546px;
+    background: #0F263A;
+    border: 1px solid #1E2F3F;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: right;
+    box-sizing: border-box;
+    transition: 0.3s;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    font-size:17px;
+}
+
+/* خط اول: نام + بج شهر */
+
+.card-agency .name {
+    font-size: 21px;
+    font-family: YekanBold;
+    font-weight: 700;
+    color: white;
+    margin-right: 0px;
+}
+
+
+
+
+/* آدرس */
+.card-agency .address {
+    font-size: 14px;
+    color: white;
+    margin-right:0px;
+    margin-top:20px;
+  
+    text-align: right;
+
+}
+
+/* تلفن */
+.phoneitems-agency {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    direction: rtl;
+}
+
+.card-agency .icon-agency {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.card-agency .phone-agency {
+    font-size: 16px;
+    font-weight: 400;
+    color: #67D8EE;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.agency-error{
+    color:white;
+}
+
+/* موبایل: هر کارت یک سطر کامل */
+@media (max-width: 768px) {
+    .card-agency {
+        width: 100%;
+        max-width: none;
+    }
+
+    .cards-agency {
+        padding: 0 4%;
+        gap: 16px;
+    }
+
+    .agency-title {
+        font-size: 25px;
+        padding-top: 30px;
+    }
+}
+
+
+
+/*licenses============================*/
+
+#licenses{
+    background:#0F263A;
+    color:white;
+    padding-top:30px;
+
+}
+
+
+.license-card{
+    max-width:1100px;
+    margin:50px auto 0;
+    padding:40px;
+    direction:ltr;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-radius:16px;
+    position: relative;
+    top:-20px;
+}
+
+.license-icon{
+    width:25%;
+    text-align:center;
+
+}
+
+.license-icon img{
+    width:180px;
+
+}
+
+.license-btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:140px;
+    height:40px;
+    margin-top:20px;
+    background:#EC5504;
+    color:white;
+    text-decoration:none;
+    border-radius:100px;
+    font-family: YekanBold;
+}
+
+.license-content{
+    width:50%;
+    text-align: right;
+    max-width:440px;
+    direction: rtl;
+    margin-right:30px;
+
+    margin-left:auto;
+    position: relative;
+
+
+
+
+
+}
+
+.license-content p{
+
+    width: 100%;
+    max-width: none;
+    font-size: 18px;
+    line-height: 2;
+    font-family: Yekan;
+    font-weight: 400;
+    text-align: right;
+    margin: 0;
+
+}
+
+.license-logo{
+    width:25%;
+    text-align:center;
+
+}
+
+.license-logo img{
+    width:140px;
+ 
+}
+@media(max-width:1105px){
+    .license-card{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    direction: rtl;
+}
+
+.license-logo{
+    width:100%;
+    order:1;
+
+}
+
+.license-content{
+    width:100%;
+    order:2;
+    transform:none;
+    margin:0;
+    text-align:center;
+}
+
+.license-content p{
+    margin:0;
+    text-align:center;
+}
+
+.license-icon{
+    width:100%;
+    order:3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+}
+
+.license-icon img{
+    width:120px;
+    margin:0;
+}
+
+.license-btn{
+    margin:0;
+}
+}
+
+/*================contactus=======*/
+
+/* =====================================================
+   CONTACT FORM + CAPTCHA  (نسخه نهایی تمیز)
+   ===================================================== */
+
+#contactus {
+    background: #041627;
+    min-height: 6b0vh;
+    color: white;
+    padding: 80px 7%;
+}
+
+.contact_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact_text {
+    max-width: 650px;
+    text-align: center;
+    line-height: 2;
+    font-size: 18px;
+    opacity: 0.9;
+    font-family: Yekan;
+    font-weight: 400;
+    
+}
+
+.contact_cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact_card {
+    width: 265px;
+    background: #0F263A;
+    border: 1px solid #1E2F3F;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+    ;
+}
+
+.contact_card .icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contact_card .label {
+    font-size: 14px;
+    color: #67D8EE;
+    margin-bottom: 5px;
+}
+
+.contact_card .value {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    direction: rtl;
+}
+
+
+
+/*footer===================*/
+
+
+footer{
+    width:100%;
+    margin-top: -40px;
+}
+
+footer img{
+    display:block;
+    width:100%;
+    height:auto;
+
+}
+.footer1{
+    display: none;
+}
+
+
+
+
+
+
+/*====================modal_overlay=======*/
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.login-message {
+    display: block;
+    position: relative;
+    background: #04192C;
+    border: 1px solid #1E2F3F;
+    border-radius: 16px;
+    padding: 40px 36px 36px;
+    width: 90%;
+    max-width: 640px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    z-index: 10001;
+    animation: fadeIn 0.3s ease;
+    text-align: center;
+}
+
+.message-content {
+    text-align: center;
+    position: relative;
+}
+
+.message-content .message-icon {
+    width: 70px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.message-content p {
+    color: #E0F0FF;
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    font-weight: 500;
+}
+
+.login-btn-go {
+    text-decoration: none;
+    display: inline-flex;
+    width: 140px;
+    height: 42px;
+    border-radius: 100px;
+    border: none;
+    color: white;
+    background-color: #EC5504;
+    font-weight: bold;
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+    font-family: YekanBold;
+    transition: 0.25s;
+}
+
+.login-btn-go:hover {
+    background: #ff6a00;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.92) translateY(15px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@media(max-width:1105px){
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);   /* مشکی ۵۰٪ */
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.login-message {
+    display: block;               /* همیشه نمایش داده می‌شه وقتی overlay فعاله */
+    position: relative;
+    background: #04192C;
+    border: 1px solid #1E2F3F;
+    border-radius: 16px;
+    padding: 30px 36px 36px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    z-index: 10001;
+    animation: fadeIn 0.3s ease;
+    text-align: center;
+}
+
+.message-content {
+    text-align: center;
+    position: relative;
+}
+
+.message-content .message-icon {
+    width: 70px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.message-content p {
+    color: #E0F0FF;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    font-weight: 500;
+}
+
+.close-message {
+    position: absolute;
+    top: -12px;
+    left: -8px;          /* چون dir=rtl هست */
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+}
+
+/* =========================================
+   CHARGE OVERLAY
+   ========================================= */
+
+
+
